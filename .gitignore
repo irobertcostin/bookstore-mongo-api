@@ -1,0 +1,11 @@
+.env 
+node_modules
+dist 
+build
+coverage
+*.js
+*.js.map
+*.tsbuildinfo
+logs/
+*.log
+package-lock.json
