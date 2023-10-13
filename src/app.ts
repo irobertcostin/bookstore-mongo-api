@@ -1,6 +1,9 @@
 import express from "express"
 import dotenv from "dotenv"
 import cors from "cors"
+import mongoose from "mongoose";
+import db from "./config/db";
+
 
 
 dotenv.config();
@@ -12,8 +15,14 @@ app.use(express.json());
 
 
 
-app.listen(3939, async () => {
+db.then((() => {
 
-    console.log("Listening...");
+    app.listen(3939, async () => {
 
-})
+        console.log("Listening...");
+
+    })
+
+})).catch(e => { console.log(e.message); })
+
+
